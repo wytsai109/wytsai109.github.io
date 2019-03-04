@@ -1,5 +1,3 @@
-# Wei-Yang Tsai
-
 
 ### Education
 
@@ -14,11 +12,11 @@ Software Engineer, R&D	2017 – 2019
 * Design and develop interface of ophthalmic laser machine
 
 * Database
-	Implemented C# library for the SQL database to access patients’ data
+　Implemented C# library for the SQL database to access patients’ data
 * Corneal Topography
-	Developed algorithm to analyze different types of corneal
+　Developed algorithm to analyze different types of corneal
 * Iris recognition
-  Developed the method for doing iris recognition
+　Developed the method for doing iris recognition
 
 
 ### SKILLS, Public repository
