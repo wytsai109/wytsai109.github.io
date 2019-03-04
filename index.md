@@ -1,23 +1,23 @@
-## Wei-Yang Tsai
+# Wei-Yang Tsai
 
 
 # Education
 
 National Cheng Kung University	Tainan, Taiwan
-Master of Engineering in Biomedical 													2016
-•	GPA: 4.0 / 4.3 
+Master of Engineering in Biomedical 	2016
+*	GPA: 4.0 / 4.3 
 
 
 ### Work Experience
 
 Software Engineer, R&D	2017 – 2019
-•	Design and develop interface of ophthalmic laser machine
+*	Design and develop interface of ophthalmic laser machine
 
-•	Database
+*	Database
 	Implemented C# library for the SQL database to access patients’ data
-•	Corneal Topography
+*	Corneal Topography
 	Developed algorithm to analyze different types of corneal
-•	Iris recognition
+*	Iris recognition
   Developed the method for doing iris recognition
 
 
