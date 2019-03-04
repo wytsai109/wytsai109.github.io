@@ -2,7 +2,7 @@
 ### Education
 
 National Cheng Kung University	Tainan, Taiwan
-Master of Engineering in Biomedical 	2016
+Master of Engineering in Biomedical　　2016
 *	GPA: 4.0 / 4.3 
 
 
