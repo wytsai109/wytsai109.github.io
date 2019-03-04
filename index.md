@@ -23,7 +23,7 @@ Software Engineer, R&D	2017 – 2019
 
 ### SKILLS, Public repository
 
-Technical Skills: C#/C++, python, SQL, Java, Labview, Matlab
-Public repository: https://github.com/wytsai109/
+*Technical Skills: C#/C++, python, SQL, Java, Labview, Matlab
+*Public repository: https://github.com/wytsai109/
 
 
