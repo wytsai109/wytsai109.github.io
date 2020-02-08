@@ -19,10 +19,10 @@ Software Engineer, R&D	2017 – 2020
   * Developed algorithm to analyze different types of corneal
 * Iris recognition
   * Developed the method for doing iris recognition
-*	IO interface
-  *	IO detection and control
-*	Motor and Laser Control
-  *	Automated surgery, which led to simple and convenient
+* IO interface
+  * IO detection and control
+* Motor and Laser Control
+  * Automated surgery, which led to simple and convenient
 
 
 ### SKILLS, Public repository
