@@ -9,7 +9,7 @@ Master of Engineering in Biomedical 2016
 
 
 ### Work Experience
-Software Engineer, R&D	2021 – now
+Sr. Software Engineer, R&D	2021 – now
 * Design and develop network communication application
   
 * Build Websocket and RESTful API to design and develop new generation applications.
