@@ -9,8 +9,15 @@ Master of Engineering in Biomedical 2016
 
 
 ### Work Experience
-
-Software Engineer, R&D	2017 – 2020
+Software Engineer, R&D	2021 – now
+* Design and develop network communication application
+  
+* Build Websocket and RESTful API to design and develop new generation applications.
+* Migrate the communication library from java to c#.
+* Migrate the library's OS from Windows to Linux.
+* IIoT device integration application
+ 
+Software Engineer, R&D	2017 – 2021
 * Design and develop interface of ophthalmic laser machine
 
 * Database
@@ -27,7 +34,7 @@ Software Engineer, R&D	2017 – 2020
 
 ### SKILLS, Public repository
 
-* Technical Skills: C#/C++, python, SQL, Java, Labview, Matlab
+* Technical Skills: C#/C++, Java, python, ARM, SQL, OpenCV
 * Public repository: https://github.com/wytsai109/
 * Activities: Teaching Math/Science in remote areas
 * Interests: Play piano, play badminton, write interesting programs, travel
