@@ -1,56 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Wei-Yang Tsai | Portfolio</title>
+  <title>Wei-Yang Tsai | Lead OpenBMC Firmware & System Engineer</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Wei-Yang Tsai - Systems and Infrastructure Software/Firmware Engineer specializing in OpenBMC, bare-metal bring-up, networking protocols, and CI/CD automation.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <style>
+    :root {
+      --primary-dark: #0f172a;
+      --primary-blue: #1e3a8a;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #00d4ff;
+      --bg-light: #f0f4f8;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f0f4f8;
-      color: #333;
+      background: var(--bg-light);
+      color: var(--text-main);
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
+
     /* Navbar */
     .navbar {
-      background: rgba(44, 62, 80, 0.95);
-      padding: 1.2rem 0;
-      backdrop-filter: blur(5px);
+      background: rgba(15, 23, 42, 0.95);
+      padding: 1rem 0;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     }
-    .navbar-brand, .nav-link {
+
+    .navbar-brand,
+    .nav-link {
       color: #fff !important;
       font-weight: 500;
       transition: all 0.3s ease;
     }
-    .nav-link:hover {
-      color: #00d4ff !important;
-      transform: scale(1.05);
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent-cyan) !important;
     }
 
     /* Hero */
     .hero {
-      background: linear-gradient(120deg, #1e3a8a, #3b82f6);
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
       color: #fff;
-      padding: 150px 20px;
+      padding: 140px 20px 100px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      animation: fadeInDown 1s ease;
-    }
-    .hero p {
-      font-size: 1.5rem;
-      font-weight: 300;
-      animation: fadeInUp 1s ease 0.5s backwards;
-    }
+
     .hero::before {
       content: '';
       position: absolute;
@@ -58,164 +67,592 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
-      animation: rotate 20s linear infinite;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 60%);
+      animation: rotate 25s linear infinite;
+      pointer-events: none;
     }
 
-    /* Sections */
-    .section {
-      padding: 80px 20px;
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      margin: 0 auto;
     }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      animation: fadeInDown 0.8s ease;
+    }
+
+    .hero .subtitle {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: #e2e8f0;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s ease 0.2s backwards;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      animation: fadeInUp 0.8s ease 0.4s backwards;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.25s ease;
+    }
+
+    .hero-pill:hover {
+      background: rgba(0, 212, 255, 0.2);
+      border-color: var(--accent-cyan);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Sections & Cards */
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+    }
+
     .card {
       background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      margin-bottom: 30px;
-      transition: all 0.4s ease;
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+      padding: 36px;
+      margin-bottom: 32px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 38px rgba(15, 23, 42, 0.11);
     }
+
     .card-title {
-      font-size: 2rem;
-      color: #1e3a8a;
+      font-size: 1.75rem;
+      color: var(--primary-blue);
       font-weight: 700;
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
     }
+
     .card-title::after {
       content: '';
       position: absolute;
       width: 50px;
       height: 4px;
-      background: #00d4ff;
+      background: var(--accent-cyan);
       bottom: -10px;
       left: 0;
+      border-radius: 2px;
     }
-    .card ul {
-      list-style: none;
-      padding-left: 20px;
+
+    /* Summary */
+    .summary-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #334155;
+      margin-bottom: 0;
     }
-    .card ul li {
-      padding: 10px 0;
+
+    /* Skills */
+    .skill-group {
+      margin-bottom: 20px;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-group-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-group-title i {
+      color: var(--accent-blue);
+    }
+
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-badge {
+      background: #eff6ff;
+      color: var(--primary-blue);
+      border: 1px solid #bfdbfe;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .skill-badge:hover {
+      background: var(--primary-blue);
+      color: #fff;
+      border-color: var(--primary-blue);
+    }
+
+    /* Work Experience */
+    .job-item {
       position: relative;
-      font-size: 1.1rem;
+      padding-left: 24px;
+      border-left: 3px solid #dbeafe;
+      margin-bottom: 36px;
     }
-    .card ul li i {
-      color: #00d4ff;
-      margin-right: 10px;
+
+    .job-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-item::before {
+      content: '';
+      position: absolute;
+      left: -8.5px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--accent-blue);
+    }
+
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .job-company {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 0;
+    }
+
+    .job-location {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .job-role-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .job-role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+    }
+
+    .job-period {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .job-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .job-list li {
+      position: relative;
+      padding: 6px 0 6px 24px;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: #334155;
+    }
+
+    .job-list li i {
+      position: absolute;
+      left: 0;
+      top: 11px;
+      color: var(--accent-blue);
+      font-size: 0.85rem;
+    }
+
+    /* Education */
+    .edu-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid #e2e8f0;
+      gap: 8px;
+    }
+
+    .edu-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .edu-item:first-of-type {
+      padding-top: 0;
+    }
+
+    .edu-degree {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .edu-school {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .edu-period {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary-blue);
+      background: #eff6ff;
+      padding: 4px 12px;
+      border-radius: 20px;
     }
 
     /* Footer */
     footer {
-      background: #1e3a8a;
-      color: #fff;
-      padding: 30px;
+      background: var(--primary-dark);
+      color: #cbd5e1;
+      padding: 36px 20px;
       text-align: center;
     }
+
     footer a {
-      color: #00d4ff;
+      color: var(--accent-cyan);
       text-decoration: none;
       font-weight: 500;
     }
+
     footer a:hover {
       color: #fff;
+      text-decoration: underline;
     }
 
     /* Animations */
     @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .hero p { font-size: 1.2rem; }
-      .card-title { font-size: 1.5rem; }
-      .card { padding: 20px; }
+      .hero {
+        padding: 120px 16px 80px;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .card-title {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="60">
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Wei-Yang Tsai</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-        <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-      </ul>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Wei-Yang Tsai</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#summary">Summary</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- Hero Section -->
-<div class="hero">
-  <h1>Hello, I'm Wei-Yang Tsai</h1>
-  <p>Software Engineer | Innovator in Biomedical Solutions</p>
-</div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Wei-Yang Tsai</h1>
+      <p class="subtitle">Lead OpenBMC Firmware &amp; System Engineer | Systems &amp; Infrastructure Software</p>
+      <div class="hero-links">
+        <span class="hero-pill"><i class="fas fa-map-marker-alt"></i> Taipei, Taiwan</span>
+        <a class="hero-pill" href="mailto:wytsai109@gmail.com"><i class="fas fa-envelope"></i> wytsai109@gmail.com</a>
+        <a class="hero-pill" href="tel:+886938120021"><i class="fas fa-phone"></i> +886-938-120-021</a>
+        <a class="hero-pill" href="https://github.com/wytsai109/" target="_blank" rel="noopener noreferrer"><i
+            class="fab fa-github"></i> github.com/wytsai109</a>
+      </div>
+    </div>
+  </header>
 
-<!-- Main Content -->
-<div class="container section">
-  <!-- Education -->
-  <div id="education" class="card">
-    <h2 class="card-title">Education</h2>
-    <h4>National Cheng Kung University, Tainan, Taiwan</h4>
-    <p><i class="fas fa-graduation-cap"></i> Master of Engineering in Biomedical, 2016</p>
-    <p><i class="fas fa-star"></i> GPA: 4.0 / 4.3</p>
-  </div>
+  <!-- Main Content -->
+  <main class="container section">
 
-  <!-- Work Experience -->
-  <div id="work" class="card">
-    <h2 class="card-title">Work Experience</h2>
-    <h4>Sr. Software Engineer, R&D (2021 – Present)</h4>
-    <p>Designing Next-Gen Network Communication Solutions</p>
-    <ul>
-      <li><i class="fas fa-code"></i> Built WebSocket and RESTful APIs for modern applications.</li>
-      <li><i class="fas fa-exchange-alt"></i> Migrated libraries from Java to C# and Windows to Linux.</li>
-      <li><i class="fas fa-industry"></i> Developed IIoT device integration applications.</li>
-    </ul>
-    <h4>Software Engineer, R&D (2017 – 2021)</h4>
-    <p>Ophthalmic Laser Machine Interface Development</p>
-    <ul>
-      <li><i class="fas fa-microchip"></i> Controlled motors and lasers with Modbus, EtherCAT, and MCU.</li>
-      <li><i class="fas fa-eye"></i> Created eye surgical algorithms and iris recognition.</li>
-      <li><i class="fas fa-bolt"></i> Achieved real-time tracking with STM32 for safety.</li>
-      <li><i class="fas fa-sync"></i> Upgraded systems from DOS to Windows and Modbus to EtherCAT.</li>
-    </ul>
-  </div>
+    <!-- Summary -->
+    <section id="summary" class="card">
+      <h2 class="card-title">Summary</h2>
+      <p class="summary-text">
+        Systems and Infrastructure Software/Firmware Engineer with 9+ years of experience spanning server management
+        firmware (OpenBMC), bare-metal hardware bring-up (NPI), network infrastructure protocols, and large-scale
+        automated testing. Proven track record in architecting D-Bus services, low-level host-to-BMC interconnects
+        (eSPI, MCTP/I2C), and CI/CD deployment pipelines for enterprise server platforms using C/C++, Python, and Go.
+      </p>
+    </section>
 
-  <!-- Skills & More -->
-  <div id="skills" class="card">
-    <h2 class="card-title">Skills & More</h2>
-    <p><i class="fas fa-tools"></i> <b>Technical Skills:</b> C#, C/C++, Java, Python, SQL, RESTful, OpenCV</p>
-    <p><i class="fab fa-github"></i> <b>Repository:</b> <a href="https://github.com/wytsai109/" target="_blank">github.com/wytsai109</a></p>
-    <p><i class="fas fa-users"></i> <b>Activities:</b> Welfare Committee, Badminton Team Vice Captain</p>
-    <p><i class="fas fa-heart"></i> <b>Interests:</b> Badminton, Piano, Coding, Travel</p>
-  </div>
-</div>
+    <!-- Technical Skills -->
+    <section id="skills" class="card">
+      <h2 class="card-title">Technical Skills</h2>
 
-<!-- Footer -->
-<footer>
-  <p>Let’s Connect: <a href="mailto:wytsai109@gmail.com">wytsai109@gmail.com</a></p>
-</footer>
+      <div class="skill-group">
+        <div class="skill-group-title"><i class="fas fa-code"></i> Languages</div>
+        <div class="skill-badges">
+          <span class="skill-badge">C</span>
+          <span class="skill-badge">C++</span>
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">Go</span>
+          <span class="skill-badge">Bash</span>
+          <span class="skill-badge">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title"><i class="fas fa-microchip"></i> Server &amp; Embedded Infrastructure</div>
+        <div class="skill-badges">
+          <span class="skill-badge">OpenBMC</span>
+          <span class="skill-badge">Yocto Project</span>
+          <span class="skill-badge">Linux Kernel / Device Tree (DTS)</span>
+          <span class="skill-badge">D-Bus</span>
+          <span class="skill-badge">Bare-Metal Bring-up</span>
+          <span class="skill-badge">Hardware NPI</span>
+          <span class="skill-badge">IPMI</span>
+          <span class="skill-badge">eSPI</span>
+          <span class="skill-badge">MCTP / I2C</span>
+          <span class="skill-badge">CPLD Management</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title"><i class="fas fa-network-wired"></i> Networking &amp; Protocols</div>
+        <div class="skill-badges">
+          <span class="skill-badge">TCP/IP</span>
+          <span class="skill-badge">RESTful API</span>
+          <span class="skill-badge">WebSocket</span>
+          <span class="skill-badge">BGP</span>
+          <span class="skill-badge">VRRP</span>
+          <span class="skill-badge">SNMPv3</span>
+          <span class="skill-badge">NTP</span>
+          <span class="skill-badge">IEEE 802.1X / RADIUS (EAP-TLS)</span>
+          <span class="skill-badge">EtherCAT</span>
+          <span class="skill-badge">Modbus</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title"><i class="fas fa-cogs"></i> DevOps, Automation &amp; Tools</div>
+        <div class="skill-badges">
+          <span class="skill-badge">Docker</span>
+          <span class="skill-badge">Git / GitLab CI/CD</span>
+          <span class="skill-badge">Pytest</span>
+          <span class="skill-badge">Linux (Ubuntu)</span>
+          <span class="skill-badge">AI-Assisted Development Workflows</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section id="experience" class="card">
+      <h2 class="card-title">Work Experience</h2>
+
+      <!-- Quanta Computer -->
+      <div class="job-item">
+        <div class="job-header">
+          <h3 class="job-company">Quanta Computer Inc.</h3>
+          <span class="job-location"><i class="fas fa-map-marker-alt"></i> Taoyuan / Taipei, Taiwan</span>
+        </div>
+        <div class="job-role-row">
+          <span class="job-role">Lead OpenBMC Firmware &amp; System Engineer</span>
+          <span class="job-period">2026 – Present</span>
+        </div>
+        <ul class="job-list">
+          <li><i class="fas fa-chevron-right"></i> <strong>Server Platform Bring-up &amp; Hardware NPI:</strong> Led
+            OpenBMC firmware architecture, Yocto BSP customization, and Device Tree (DTS) bring-up for next-generation
+            ASPEED AST2700 / AST2600 server management modules; resolved critical 1.8V eSPI pinmux and FIT image boot
+            bottlenecks to accelerate hardware New Product Introduction (NPI) and bare-metal turnup readiness.</li>
+          <li><i class="fas fa-chevron-right"></i> <strong>Out-of-Band Management &amp; Interconnects:</strong>
+            Architected and validated D-Bus services, Entity Manager hardware topology models, MCTP over I2C, and 1.8V
+            eSPI host-to-BMC interfaces to ensure reliable telemetry, thermal/power control, and IPMI communication
+            across multi-node server racks.</li>
+          <li><i class="fas fa-chevron-right"></i> <strong>Automated Provisioning &amp; CI/CD Pipelines:</strong> Built
+            automated firmware deployment and verification workflows using GitLab CI/CD, Python, and Docker, automating
+            SCM/RMC CPLD updates and AC-cycle stress testing to cut manual turnup and validation time by ~70% across
+            EVT/DVT/PVT builds.</li>
+          <li><i class="fas fa-chevron-right"></i> <strong>System Reliability &amp; Low-Level Diagnostics:</strong>
+            Executed root-cause analysis (RCA) on hardware/firmware anomalies—including power sequencing state machines,
+            RS485/FRU inventory management, and logic-analyzer protocol tracing—to ensure high availability and fault
+            tolerance for rack-scale deployments.</li>
+        </ul>
+      </div>
+
+      <!-- Moxa -->
+      <div class="job-item">
+        <div class="job-header">
+          <h3 class="job-company">Moxa Inc.</h3>
+          <span class="job-location"><i class="fas fa-map-marker-alt"></i> New Taipei City, Taiwan</span>
+        </div>
+        <div class="job-role-row">
+          <span class="job-role">Senior Software Engineer</span>
+          <span class="job-period">2021 – 2026</span>
+        </div>
+        <ul class="job-list">
+          <li><i class="fas fa-chevron-right"></i> <strong>Network Infrastructure Protocols:</strong> Developed and
+            validated core enterprise networking services including NTP, VRRP, SNMPv3, BGP, IEEE 802.1X, and RADIUS
+            (EAP-TLS) across 50+ edge gateways and industrial network devices, ensuring high-availability routing and
+            zero-trust port access control.</li>
+          <li><i class="fas fa-chevron-right"></i> <strong>Cross-Platform Communication &amp; APIs:</strong> Designed
+            unified communication libraries in C/C++, Go, and Python supporting RESTful APIs, WebSockets, and Linux UART
+            across Linux and Windows platforms.</li>
+          <li><i class="fas fa-chevron-right"></i> <strong>Scalable Test Automation Framework:</strong> Engineered a
+            modular Python test automation suite (Pytest, pytest-bdd, Playwright, TextFSM) integrated with CI/CD
+            pipelines, reducing regression test execution cycles by ~60% and improving firmware release stability.</li>
+          <li><i class="fas fa-chevron-right"></i> <strong>Security Compliance &amp; System Architecture:</strong>
+            Translated complex product requirements and IEC 62443 cybersecurity specifications (including DoS protection
+            and certificate-based authentication) into production-grade software designs and structured validation
+            suites across cross-functional teams.</li>
+        </ul>
+      </div>
+
+      <!-- Excelsius Medical -->
+      <div class="job-item">
+        <div class="job-header">
+          <h3 class="job-company">Excelsius Medical Co., Ltd.</h3>
+          <span class="job-location"><i class="fas fa-map-marker-alt"></i> Taiwan</span>
+        </div>
+        <div class="job-role-row">
+          <span class="job-role">Software Engineer</span>
+          <span class="job-period">2017 – 2021</span>
+        </div>
+        <ul class="job-list">
+          <li><i class="fas fa-chevron-right"></i> <strong>System Migration &amp; Hardware Control:</strong> Migrated
+            real-time hardware control systems from DOS to Windows, integrating PCIe analog/digital I/O and ARM-based
+            MCU communication via UART, Modbus, and EtherCAT.</li>
+          <li><i class="fas fa-chevron-right"></i> <strong>Real-Time Algorithms &amp; Data Management:</strong>
+            Developed real-time computer vision and hardware control algorithms alongside a SQL-backed data management
+            system for clinical operations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="card">
+      <h2 class="card-title">Education</h2>
+
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree"><i class="fas fa-graduation-cap text-primary me-2"></i>M.S. in Biomedical Engineering
+          </div>
+          <div class="edu-school">National Cheng Kung University (NCKU)</div>
+        </div>
+        <span class="edu-period">2014 – 2016</span>
+      </div>
+
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree"><i class="fas fa-graduation-cap text-primary me-2"></i>B.S. in Physical Therapy</div>
+          <div class="edu-school">National Cheng Kung University (NCKU)</div>
+        </div>
+        <span class="edu-period">2009 – 2014</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p class="mb-2">Let’s Connect: <a href="mailto:wytsai109@gmail.com">wytsai109@gmail.com</a> &nbsp;|&nbsp; <a
+        href="tel:+886938120021">+886-938-120-021</a> &nbsp;|&nbsp; <a href="https://github.com/wytsai109/"
+        target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    <p class="mb-0 small text-secondary">&copy; 2026 Wei-Yang Tsai &bull; Taipei, Taiwan</p>
+  </footer>
 
 </body>
+
 </html>
